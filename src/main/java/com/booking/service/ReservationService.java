@@ -136,10 +136,13 @@ public class ReservationService {
 
         if (customerInput.getMember().getMembershipName().equals("Silver")) {
             totalPrice = totalPrice - (totalPrice * 0.05);
+            customerInput.setWallet(customerInput.getWallet() - totalPrice);
         } else if (customerInput.getMember().getMembershipName().equals("Gold")) {
             totalPrice = totalPrice - (totalPrice * 0.1);
+            customerInput.setWallet(customerInput.getWallet() - totalPrice);
         } else {
             totalPrice = totalPrice;
+            customerInput.setWallet(customerInput.getWallet() - totalPrice);
         }
 
         reservationPrice = totalPrice;
